@@ -12,7 +12,7 @@ using namespace std;
 
 int main()
 {
-	string levelchoice;
+	int levelchoice;
 
 	cout << " Welcome to Zach and Kane's C++ Final " << endl;
 	cout << "                                              " << endl;
@@ -34,7 +34,22 @@ int main()
 	cout << "                                              " << endl;
 	cout << " Select a level " << endl << " Level [1] - Easy \n Level [2] - Medium \n Level [3] - Hard \n Level [4] - Alien Survival " << endl;
 	cin >> levelchoice;
-	
+	if (levelchoice = 1)
+	{
+
+	}
+	else if (levelchoice = 2)
+	{
+
+	}
+	else if (levelchoice = 3)
+	{
+
+	}
+	else if (levelchoice = 4)
+	{
+		AlienLevel();
+	}
 
 	system("Pause");
 	return 0;
