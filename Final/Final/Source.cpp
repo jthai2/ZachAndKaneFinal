@@ -7,7 +7,7 @@
 #include<cstdlib>
 #include<time.h>
 #include<iomanip>
-
+#include"AlienLevel.h"
 using namespace std;
 
 int main()
