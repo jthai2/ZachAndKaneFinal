@@ -7,12 +7,12 @@
 #include<string>
 #include<math.h>
 #include<iomanip>
-#include<time.h>
+#include<time.h> 
 #include<stdlib.h>
 
 using namespace std;
 
-int main()
+int ResourcePicker()
 {
 	string SpecialItem; 
 	int Brick = 0;
@@ -29,8 +29,21 @@ int main()
 		int newBrick = Brick + 5;
 		cout << newBrick << endl;
 	}
-
+	if (SpecialItem == "Wood")
+	{
+		int newWood = wood + 5;
+		cout << newWood;
+	}
+	if (SpecialItem == "Food")
+	{
+		int newFood = food + 5;
+		cout << food;
+	}
 
 	system("pause");
 	return 0;
+}
+int main()
+{
+	ResourcePicker();
 }
