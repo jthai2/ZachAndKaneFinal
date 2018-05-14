@@ -7,12 +7,20 @@
 #include<cstdlib>
 #include<time.h>
 #include<iomanip>
+#include<conio.h>
+#include<dos.h>
+#include<Windows.h>
 #include"AlienLevel.h"
+#include"Easy.h"
 using namespace std;
+
+
+
 
 int main()
 {
 	int levelchoice;
+	int count = 1;
 
 	cout << " Welcome to Zach and Kane's C++ Final " << endl;
 	cout << "                                              " << endl;
@@ -34,21 +42,23 @@ int main()
 	cout << "                                              " << endl;
 	cout << " Select a level " << endl << " Level [1] - Easy \n Level [2] - Medium \n Level [3] - Hard \n Level [4] - Alien Survival " << endl;
 	cin >> levelchoice;
-	if (levelchoice = 1)
+	if (levelchoice == 1)
+	{
+		Easy();
+	}
+	else if (levelchoice == 2)
 	{
 
 	}
-	else if (levelchoice = 2)
+	else if (levelchoice == 3)
 	{
 
 	}
-	else if (levelchoice = 3)
-	{
+	else if (levelchoice == 4)
 
-	}
-	else if (levelchoice = 4)
 	{
-		AlienLevel();
+		 AlienLevel(count);
+	
 	}
 
 	system("Pause");
