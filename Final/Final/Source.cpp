@@ -44,7 +44,7 @@ int main()
 	cin >> levelchoice;
 	if (levelchoice == 1)
 	{
-		Easy();
+		Easy(count);
 	}
 	else if (levelchoice == 2)
 	{

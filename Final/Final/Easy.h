@@ -12,12 +12,11 @@
 
 using namespace std;
 
-
+int Wood;
+int Food;
 int Collector()
 {
-	int Brick = 0;
-	int Wood = 0;
-	int Food = 0;
+	
 	int Resource;
 
 
@@ -64,7 +63,7 @@ int TurnSystem(int count)
 		if (turn == 1)
 		{
 			cout << " You have chosen to display the stats " << endl;
-			cout << "Stats: " << endl << "Brick: " << newBrick << endl << "Wood: " << newWood << endl << "Food: " << newFood << endl << endl;
+			cout << "Stats: " << endl << "Brick: " << Brick << endl << "Wood: " << Wood << endl << "Food: " << Food << endl << endl;
 
 		}
 		else if (turn == 2)
