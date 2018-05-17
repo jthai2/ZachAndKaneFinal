@@ -11,9 +11,9 @@
 
 
 using namespace std;
-
 int Wood;
 int Food;
+int health = 20;
 int Collector()
 {
 	
@@ -48,6 +48,21 @@ int Collector()
 	system("Pause");
 	return 0;
 }
+int Defence()
+{
+	int upgrade1;
+	int defcount = 0;
+
+	do{
+		cout << "How much would you like to add? \n10\n20\n30" << endl;
+		cin >> upgrade1;
+
+
+
+
+	} while (defcount == 1);
+	return 0;
+}
 
 int TurnSystem(int count)
 {
@@ -68,11 +83,11 @@ int TurnSystem(int count)
 		}
 		else if (turn == 2)
 		{
-
+			Collector();
 		}
 		else if (turn == 3)
 		{
-
+			
 		}
 		else if (turn == 4)
 		{
@@ -95,7 +110,7 @@ int Easy(int count)
 
 
 
-	Collector();
+
 
 	TurnSystem(count);
 
