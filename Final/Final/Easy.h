@@ -11,19 +11,17 @@
 
 
 using namespace std;
-int Wood;
-int Food;
+int Wood = 0;
+int Food = 0;
 int health = 20;
-int Collector()
+int settlement = 0;
+int Collector()//collect resources
 {
 	
 	int Resource;
 
-
-
 	cout << "What resouce would you like to collect \nBrick - 1\nWood - 2\nFood - 3" << endl;
 	cin >> Resource;
-
 
 	if (Resource == 1)
 	{
@@ -54,16 +52,34 @@ int Defence()
 	int defcount = 0;
 
 	do{
-		cout << "How much would you like to add? \n10\n20\n30" << endl;
+		cout << "Are you sure you would like to upgrade? \n1-Yes\n2-No" << endl;
 		cin >> upgrade1;
+		if (upgrade1 == 10)
+		{
+			health++;
 
+		}
 
 
 
 	} while (defcount == 1);
 	return 0;
-}
+}//upgrade defences
+int settlementBuild()//build a settlement
+{
+	cout << "To build a settlement it will take \n10 wood\n5 brick\n10 food" << endl;
 
+	if (Wood >= 10 && Food >= 10 && Brick >= 5)
+	{
+		cout << "Successfully built a settlement" << endl;
+		Wood =  Wood - 10;
+		Food -= 10;
+		Brick -= 5;
+		settlement++;
+		system("pause");
+		return 0;
+	}
+}
 int TurnSystem(int count)
 {
 	int turn;
@@ -78,7 +94,7 @@ int TurnSystem(int count)
 		if (turn == 1)
 		{
 			cout << " You have chosen to display the stats " << endl;
-			cout << "Stats: " << endl << "Brick: " << Brick << endl << "Wood: " << Wood << endl << "Food: " << Food << endl << endl;
+			cout << "Stats: " << endl << "Brick: " << Brick << endl << "Wood: " << Wood << endl << "Food: " << Food << endl << "Health:" << health << endl << "Settlements:" << settlement << endl;
 
 		}
 		else if (turn == 2)
@@ -87,11 +103,11 @@ int TurnSystem(int count)
 		}
 		else if (turn == 3)
 		{
-			
+			Defence();
 		}
 		else if (turn == 4)
 		{
-
+			settlementBuild();
 		}
 		else if (turn == 5)
 		{
@@ -106,18 +122,7 @@ int TurnSystem(int count)
 
 int Easy(int count)
 {
-	int settlement = 0;
-
-
-
-
-
 	TurnSystem(count);
-
-
-
-
-
 	return 0;
 }
 
