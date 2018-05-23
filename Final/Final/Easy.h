@@ -114,6 +114,10 @@ int TurnSystem(int count)
 
 			count = count + 1;
 		}
+		else if (count == 20)
+		{
+			health = health =- 20;
+		}
 	} while (count < 26);
 
 	system("Pause");
