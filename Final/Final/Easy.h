@@ -3,6 +3,7 @@
 //Program: Easy Mode
 
 #include<iostream>
+#include <stdlib.h>
 #include<string> 
 #include<cstdlib>
 #include<time.h>
@@ -11,36 +12,42 @@
 
 
 using namespace std;
-int Wood = 0;
-int Food = 0;
+
+int Wood = 50;
+int Food = 50;
 int health = 20;
 int settlement = 0;
 int Collector()//collect resources
 {
 	
 	int Resource;
-
+	int AddBrick;
+	int AddFood;
+	int AddWood;
 	cout << "What resouce would you like to collect \nBrick - 1\nWood - 2\nFood - 3" << endl;
-	cin >> Resource;
+	cin >> Resource;//user input for resource desired
 
-	if (Resource == 1)
+	if (Resource == 1)//Brick
 	{
 		srand(time(NULL));
-		Brick = rand() % 10 + 1;
+		AddBrick = rand() % 10 + 1;
+		Brick = Brick + AddBrick;
 		cout << "You know have " << Brick << " Brick" << endl;
 
 
 	}
-	if (Resource == 2)
+	if (Resource == 2)//Wood
 	{
 		srand(time(NULL));
-		Wood = rand() % 15 + 1;
+		AddWood = rand() % 15 + 1;
+		Wood = AddWood + Wood;
 		cout << "You know have " << Wood << " Wood" << endl;
 	}
-	if (Resource == 3)
+	if (Resource == 3)//Food
 	{
 		srand(time(NULL));
-		Food = rand() % 15 + 1;
+		AddFood = rand() % 15 + 1;
+		Food = AddFood + Food;
 		cout << "You know have " << Food << " Food" << endl;
 	}
 	system("Pause");
@@ -80,7 +87,7 @@ int settlementBuild()//build a settlement
 		return 0;
 	}
 }
-int TurnSystem(int count)
+int TurnSystem(int count)//Turn System
 {
 	int turn;
 
@@ -95,7 +102,7 @@ int TurnSystem(int count)
 		{
 			cout << " You have chosen to display the stats " << endl;
 			cout << "Stats: " << endl << "Brick: " << Brick << endl << "Wood: " << Wood << endl << "Food: " << Food << endl << "Health:" << health << endl << "Settlements:" << settlement << endl;
-
+			count--;
 		}
 		else if (turn == 2)
 		{
@@ -109,17 +116,16 @@ int TurnSystem(int count)
 		{
 			settlementBuild();
 		}
-		else if (turn == 5)
-		{
 
-			count = count + 1;
-		}
-		else if (count == 20)
-		{
-			health = health =- 20;
-		}
-	} while (count < 26);
+		count++;
 
+		if (count == 20)
+		{
+			cout << "A fire has broken out in the center of your town, your health is droped by 20" << endl;
+			health = health -= 20;
+		}
+	} while(count < 26 || settlement >= 3);
+	cout << "You failed to build 3 settlements in the time given, please try again." << endl;
 	system("Pause");
 	return 0;
 }

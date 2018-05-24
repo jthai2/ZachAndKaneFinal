@@ -12,13 +12,14 @@
 #include<Windows.h>
 #include"AlienLevel.h"
 #include"Easy.h"
+
 using namespace std;
 
-
-
+int Alienhealth = 50;
 
 int main()
 {
+
 	int levelchoice;
 	int count = 1;
 
@@ -36,7 +37,7 @@ int main()
 	cout << " |        |      |   |          |   |         " << endl;
 	cout << " |        |      | | |          | | |         " << endl;
 	cout << " | _______|      | | |          | | |         " << endl;
-	cout << " | |      |    __| | |__      __| | |__       " << endl; 
+	cout << " | |      |    __| | |__      __| | |__       " << endl;
 	cout << " | | Dell |   |____|____|    |____|____|      " << endl;
 	cout << " |_|______|                                   " << endl;
 	cout << "                                              " << endl;
@@ -57,8 +58,8 @@ int main()
 	else if (levelchoice == 4)
 
 	{
-		 AlienLevel(count);
-	
+		AlienLevel(count, Alienhealth);
+
 	}
 
 	system("Pause");
