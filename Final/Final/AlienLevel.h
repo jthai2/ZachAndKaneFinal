@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int Brick = 50;
+int Brick = 0;
 int wood = 0;
 int food = 0;
 int newBrick;
