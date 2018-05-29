@@ -13,7 +13,6 @@ int newBrick;
 int newWood;
 int newFood;
 
-
 int collectResources(int count)
 
 {
@@ -63,8 +62,7 @@ int collectResources(int count)
 int TurnSystemAlien(int count, int Alienhealth)
 {
 	int turn;
-
-	cout << " The turn has ended... What would you like to do? " << endl;
+	int city = 1;
 
 	do {
 		if (Alienhealth <= 0)
@@ -73,6 +71,7 @@ int TurnSystemAlien(int count, int Alienhealth)
 		}
 		else
 		{
+			cout << " The turn has ended... What would you like to do? " << endl;
 			cout << " The turn count is " << count << endl;
 			cout << " Your current health is " << Alienhealth << endl;
 			cout << " 1. Check Stats \n 2. Collect Resources \n 3. Upgrade Defenses \n 4. Build a new settlement \n 5. Feed Your People \n 6. Next Turn " << endl;
@@ -133,7 +132,18 @@ int TurnSystemAlien(int count, int Alienhealth)
 			}
 			else if (turn == 4)
 			{
+				if (newWood > 10 && newBrick > 8)
+				{
+					cout << " The settlers are building your new settlement " << endl;
+					newWood = newWood - 10;
+					newBrick = newBrick - 8;
 
+					city = city + 1;
+
+					cout << " Your new total number of settlements is " << city << endl;
+				}
+
+				count = count + 1;
 			}
 			else if (turn == 5)
 			{
@@ -183,6 +193,20 @@ int TurnSystemAlien(int count, int Alienhealth)
 				{
 				}
 			}
+			else if (turn == 12345)
+			{
+				newWood = newWood + 100;
+				newFood = newFood + 100;
+				newBrick = newBrick + 100;
+				Alienhealth = Alienhealth + 50;
+
+				cout << "Turn Count:" << count << endl;
+				cout << "Stats: " << endl;
+				cout << "Brick: " << newBrick << endl;
+				cout << "Wood: " << newWood << endl;
+				cout << "Food: " << newFood << endl;
+				cout << "Health: " << Alienhealth << endl << endl;
+			}
 		}
 	} while (count < 50);
 
@@ -199,7 +223,6 @@ death:
 
 exit:
 
-	system("Pause");
 	return 0;
 }
 
@@ -242,7 +265,7 @@ again:
 int AlienLevel(int count, int Alienhealth)
 {
 
-	cout << endl << " MWAHAHAHA you have chosen the Alien Level. \n In this level you must survive alien attacks for 25 turns " << endl;
+	cout << endl << " MWAHAHAHA you have chosen the Alien Level. \n In this level you must survive alien attacks for 50 turns " << endl;
 	ResourcePicker();
 
 	cout << " You start in America, the year is 1943. \n The scary elder lady has told you stories about the aliens that cross over the Rio Grande. " << endl;

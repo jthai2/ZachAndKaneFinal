@@ -70,6 +70,7 @@
   <ItemGroup>
     <ClInclude Include="AlienLevel.h" />
     <ClInclude Include="Easy.h" />
+    <ClInclude Include="MediumLevel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

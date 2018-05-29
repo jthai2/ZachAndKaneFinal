@@ -26,5 +26,8 @@
     <ClInclude Include="Easy.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="MediumLevel.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

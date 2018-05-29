@@ -12,10 +12,12 @@
 #include<Windows.h>
 #include"AlienLevel.h"
 #include"Easy.h"
+#include"MediumLevel.h"
 
 using namespace std;
 
 int Alienhealth = 50;
+int Mediumhealth = 50;
 
 int main()
 {
@@ -41,25 +43,30 @@ int main()
 	cout << " | | Dell |   |____|____|    |____|____|      " << endl;
 	cout << " |_|______|                                   " << endl;
 	cout << "                                              " << endl;
-	cout << " Select a level " << endl << " Level [1] - Easy \n Level [2] - Medium \n Level [3] - Hard \n Level [4] - Alien Survival " << endl;
+	cout << endl;
+	start:
+	cout << " Select a level " << endl << " Level [1] - Easy \n Level [2] - Medium \n Level [3] - Alien Survival \n Level [10] - Exit " << endl;
 	cin >> levelchoice;
 	if (levelchoice == 1)
 	{
 		Easy(count);
+		goto start;
 	}
 	else if (levelchoice == 2)
 	{
-
+		MediumLevel(count, Mediumhealth);
+		goto start;
 	}
 	else if (levelchoice == 3)
-	{
-
-	}
-	else if (levelchoice == 4)
 
 	{
 		AlienLevel(count, Alienhealth);
+		goto start;
 
+	}
+	else if (levelchoice == 10)
+	{
+		cout << " Thanks for playing " << endl;
 	}
 
 	system("Pause");
