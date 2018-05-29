@@ -8,8 +8,7 @@
 #include<cstdlib>
 #include<time.h>
 #include<iomanip>
-
-
+#include <fstream>
 
 using namespace std;
 
@@ -17,9 +16,27 @@ int Wood = 0;
 int Food = 0;
 int health = 20;
 int settlement = 0;
+int GatherHighScore()//Displays the Highscores
+{
+	string text;
+	ifstream file;
+	file.open("HighScore.txt");
+	getline(file, text);
+
+	if (text == "")
+	{
+		cout << "There is no highscores yet." << endl;
+	}
+	else
+	{
+		cout << "The high scores are:" << endl;
+		cout << text << endl;
+	}
+	return 0;
+}
 int Collector()//collect resources
 {
-	
+
 	int Resource;
 	int AddBrick;
 	int AddFood;
@@ -59,11 +76,15 @@ int Defence()
 	int defcount = 0;
 
 	do{
+		cout << "It will cost 5 Food, and 5 Brick to upgrade." << endl;
 		cout << "Are you sure you would like to upgrade? \n1-Yes\n2-No" << endl;
 		cin >> upgrade1;
-		if (upgrade1 == 10)
+		if (upgrade1 == 1)
 		{
 			health++;
+			Food = Food - 5;
+			Brick = Brick - 5;
+			cout << "Your Health is now " << health << " \n and you now have " << Food << " Food and " << Brick << " Brick. " << endl;
 
 		}
 
@@ -78,12 +99,11 @@ int settlementBuild()//build a settlement
 
 	if (Wood >= 10 && Food >= 10 && Brick >= 5)
 	{
-		cout << "Successfully built a settlement" << endl;
-		Wood =  Wood - 10;
+		cout << "Successfully built a settlement\n\n\n\nYou now have " << settlement << " settlements:" << endl;
+		Wood = Wood - 10;
 		Food -= 10;
 		Brick -= 5;
 		settlement++;
-		system("pause");
 		return 0;
 	}
 }
@@ -116,17 +136,25 @@ int TurnSystem(int count)//Turn System
 		{
 			settlementBuild();
 		}
-
+		else if (turn == 12345)
+		{
+			Wood = Wood + 300;
+			Brick = Brick + 300;
+			Food = Food + 300;
+			health = health + 500;
+			cout << "You now have + 300 of every resource\nand now have 520 health:" << endl;
+		}
 		count++;
 
-		if (count == 6)
+		if (count == 20)
 		{
-			cout << "A fire has broken out in the center of your town, your health is droped by 20\n" << endl;
+			cout << "A fire has broken out in the center of your town, your health is droped by 20" << endl;
 			health = health -= 20;
 		}
-	} while(count < 10 || settlement >= 3);
-	cout << "You failed to build 3 settlements in the time given, please try again." << endl;
-	system("Pause");
+	} while (settlement < 4);
+	
+	cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+	cout << "                  Congrats! You win! You built 3 settlements." << endl << "                            It took you " << count << " tries.\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 	return 0;
 }
 
