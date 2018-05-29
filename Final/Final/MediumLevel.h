@@ -18,7 +18,7 @@ int settlement = 1;
 		else
 		{
 		begin:
-			cout << " The turn has ended... What would you like to do? " << endl;
+			cout << " The turn has ended.. What would you like to do? " << endl;
 			cout << " The turn count is " << count << endl;
 			cout << " Your current health is " << Mediumhealth << endl;
 			cout << " 1. Check Stats \n 2. Collect Resources \n 3. Upgrade Defenses \n 4. Build a new settlement \n 5. Feed Your People \n 6. Next Turn " << endl;
